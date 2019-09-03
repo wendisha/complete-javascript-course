@@ -19,31 +19,31 @@
     Mary also plays basketball and her team has scored 97, 134 and 105 points. And like before, I want you to log the average
     winner to the console. So what you're gonna have to do here, is check if one of the players has a larger score than the other two.
  */
-var johnsTeamScoreAvg, mikesTeamScoreAvg, marysTeamScoreAvg
-johnsTeamScoreAvg = (89 + 120 + 103) / 3
-mikesTeamScoreAvg = (116 + 94 + 123) / 3
-marysTeamScoreAvg = (97 + 134 + 105) / 3
+// var johnsTeamScoreAvg, mikesTeamScoreAvg, marysTeamScoreAvg
+// johnsTeamScoreAvg = (89 + 120 + 103) / 3
+// mikesTeamScoreAvg = (116 + 94 + 123) / 3
+// marysTeamScoreAvg = (97 + 134 + 105) / 3
+  
+// if (johnsTeamScoreAvg > mikesTeamScoreAvg && johnsTeamScoreAvg > marysTeamScoreAvg){
+//     console.log("John's team is the winner, with an average of " + johnsTeamScoreAvg);
+// } else if (mikesTeamScoreAvg > johnsTeamScoreAvg && mikesTeamScoreAvg > marysTeamScoreAvg){
+//     console.log("Mike's team is the winner, with an average of " + mikesTeamScoreAvg);
+// } else if (marysTeamScoreAvg > johnsTeamScoreAvg && marysTeamScoreAvg > mikesTeamScoreAvg){
+//     console.log("Mary's team is the winner, with an average of " + marysTeamScoreAvg);
+// } else {
+//     console.log("It's a draw!!");
+// }
 
-// switch (winnerAvg) {
-//     case johnsTeamScoreAvg > mikesTeamScoreAvg && johnsTeamScoreAvg > marysTeamScoreAvg:
-//         console.log("John's team is the winner, with an average of " + johnsTeamScoreAvg);
-//         break;
-//     case mikesTeamScoreAvg > johnsTeamScoreAvg && mikesTeamScoreAvg > marysTeamScoreAvg:
-//         console.log("Mike's team is the winner, with an average of " + mikesTeamScoreAvg);
-//         break;
-//     case marysTeamScoreAvg > johnsTeamScoreAvg && marysTeamScoreAvg > mikesTeamScoreAvg:
-//         console.log("Mary's team is the winner, with an average of " + marysTeamScoreAvg);
-//         break;
-//     default:
-//         console.log("It's a draw!!");
-// }   
-if (johnsTeamScoreAvg > mikesTeamScoreAvg && johnsTeamScoreAvg > marysTeamScoreAvg){
-    console.log("John's team is the winner, with an average of " + johnsTeamScoreAvg);
-} else if (mikesTeamScoreAvg > johnsTeamScoreAvg && mikesTeamScoreAvg > marysTeamScoreAvg){
-    console.log("Mike's team is the winner, with an average of " + mikesTeamScoreAvg);
-} else if (marysTeamScoreAvg > johnsTeamScoreAvg && marysTeamScoreAvg > mikesTeamScoreAvg){
-    console.log("Mary's team is the winner, with an average of " + marysTeamScoreAvg);
-} else {
-    console.log("It's a draw!!");
+/*  3rd Code Challenge:
+    John and his family went on a holiday and went to three different restaurants, and the bills were 124, 48, and 268 dollars.
+    Now to tip the waiter a fair amount, John created a simple tip calculator as a function. And the way that John calculates his tips,
+    is that he likes to tip 20 percent of the bill when then bill is less than 50 dollars, 15 percent when the bill is between 50 and 200 dollars,
+    and 10 percent of the bill if it is more than 200 dollars. In the end, John would like to have two arrays as the end results.
+    One containing all three tips, so one for each bill, and then one containing all three final paid amounts, meaning the bill plus the paid tip.
+*/
+function tipCalculator(){
+    var tips = [18.6, 9.6, 26.8];
+    var paid = [142.6, 57.6, 294.8];
+    console.log(tips);
+    console.log(paid);
 }
-
