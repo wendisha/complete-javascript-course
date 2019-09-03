@@ -41,9 +41,38 @@
     and 10 percent of the bill if it is more than 200 dollars. In the end, John would like to have two arrays as the end results.
     One containing all three tips, so one for each bill, and then one containing all three final paid amounts, meaning the bill plus the paid tip.
 */
-function tipCalculator(){
-    var tips = [18.6, 9.6, 26.8];
-    var paid = [142.6, 57.6, 294.8];
-    console.log(tips);
-    console.log(paid);
+// function tipCalculator(){
+//     var tips = [18.6, 9.6, 26.8]
+//     var paid = [142.6, 57.6, 294.8]
+//     console.log(tips)
+//     console.log(paid)
+// }
+
+/*  4th Code Challenge:
+    Let's remember the first coding challenge, where Mark and John compared their Body Mass Indexes. Let's now implement the same functionality,
+    but this time with objects and methods. So for each of them, create an object with properties for their full name, mass, and height,
+    then, add a method to each object to calculate the BMI. And what I want you to do here is to both save the BMI to the object, and also 
+    return it from the method. And then in the end, I want you to log to the console who has the highest BMI, together with the full name
+    and the respective BMI value. Don't forget that they actually might have the same BMI. Keep in mind the mass has to be in kilogram
+    and the height in meter.
+*/
+
+var mark = {
+    fullName: "Mark Calderon",
+    mass: 60,
+    height: 1.9,
+    bmi: function(){
+        return this.mass / (this.height * 2)
+    }
 }
+
+var john = {
+    fullName: "John Rodriguez",
+    mass: 75,
+    height: 1.8,
+    bmi: function(){
+        return this.mass / (this.height * 2)
+    }
+}
+
+mark.bmi === john.bmi ? console.log("Mark's and John's BMI's are the same!") : (mark.bmi > john.bmi ? console.log("Mark's BMI is higher!") : console.log("John's BMI is higher!"));
