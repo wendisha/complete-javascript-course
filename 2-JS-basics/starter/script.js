@@ -57,22 +57,97 @@
     and the height in meter.
 */
 
-var mark = {
-    fullName: "Mark Calderon",
-    mass: 60,
-    height: 1.9,
-    bmi: function(){
-        return this.mass / (this.height * 2)
-    }
-}
+// var mark = {
+//     fullName: "Mark Calderon",
+//     mass: 60,
+//     height: 1.9,
+//     bmi: function(){
+//         return this.mass / (this.height * 2)
+//     }
+// }
+
+// var john = {
+//     fullName: "John Rodriguez",
+//     mass: 75,
+//     height: 1.8,
+//     bmi: function(){
+//         return this.mass / (this.height * 2)
+//     }
+// }
+
+// mark.bmi === john.bmi ? console.log("Mark's and John's BMI's are the same!") : (mark.bmi > john.bmi ? console.log("Mark's BMI is higher!") : console.log("John's BMI is higher!"));
+
+/*  5th Code Challenge:
+    So, remember the tip calculator that we created in another challenge. Let's now create a more advanced version using everything that we 
+    learned up until this point. So this time, John and his family went to five different restaurants. And the bills were 124, 48, 268, 180, 
+    and 42 dollars. And again, John likes to tip 20 percent of the bill, when it is less than 50 dollars, 50 percent if it's between 50 and 200,
+    and 10 percent if the bill is more than 200 dollars. Implement a tip calculator using objects and loops this time. So here are the steps 
+    for doing that, in order to help you. So, first create an object with an array for the bill values. Then, add a method to calculate the tip,
+    and this method should of course include a loop, to iterate over all the paid bills, and to do the tip calculations. Then, as an output, 
+    you should again create two arrays. One containing all the paid tips, and two, containing all the final paid amount. So again, the bill plus 
+    the tip. Hint: you can start with two empty arrays as properties, and then fill them up in the loop, one for just number one, so all the tips,
+    and then two, for all the final paid amounts. So, to even take it to the next level, Mark's family also went on a holiday. And they are going 
+    to four different restaurants. The bill that they paid were 77, 375, 110, and 45 dollars. And Mark has a slightly different rules when it 
+    comes to tipping. He likes to tip 20 percent, if the bill is less than 100 dollars, 10 percent, when the bill is between 100 and 300 dollars,
+    and 25 percent if the bill is more than 300 dollars. So, I want you to implement the same functionality as before, but this time of course,
+    using Mark's tipping rules. Then create a function, and I don't mean a method, an outside function to calculate the average of a given array 
+    of tips. Hint: to calculate the average you should loop over the array, and in each iteration, store the current sum in a variable which starts 
+    from zero. Then after you have the sum of the array, then you'll simply divide it by the number of elements in it. And then you'll log to the 
+    console which family paid the highest tips on average.
+*/
 
 var john = {
-    fullName: "John Rodriguez",
-    mass: 75,
-    height: 1.8,
-    bmi: function(){
-        return this.mass / (this.height * 2)
+    bills: [124, 48, 268, 180, 42],
+    tips: [],
+    paid: [],
+    tipCalc: function(){
+        for (var i = 0; i < this.bills.length; i++){
+            var bill = this.bills[i];
+            var percentage;
+            if (bill > 0 && bill < 100){
+                percentage = 0.2;
+            }else if (bill >= 100 && bill < 300){
+                percentage = 0.10;
+            }else if (bill > 300){
+                percentage = 0.25;
+            }else{
+                console.log("No tip!"); //Bill lesser or equal to 0
+            }
+            this.tips.push(bill * percentage);
+            this.paid.push(bill + bill * percentage);
+        } 
     }
 }
 
-mark.bmi === john.bmi ? console.log("Mark's and John's BMI's are the same!") : (mark.bmi > john.bmi ? console.log("Mark's BMI is higher!") : console.log("John's BMI is higher!"));
+var mike = {
+    bills: [77, 375, 110, 45],
+    tips: [],
+    paid: [],
+    tipCalc: function(){
+        for (var i = 0; i < this.bills.length; i++){
+            var bill = this.bills[i];
+            var percentage;
+            if (bill > 0 && bill < 50){
+                percentage = 0.2;
+            }else if (bill >= 50 && bill < 200){
+                percentage = 0.15;
+            }else if (bill > 200){
+                percentage = 0.10;
+            }else{
+                console.log("No tip!"); //Bill lesser or equal to 0
+            }
+            this.tips.push(bill * percentage);
+            this.paid.push(bill + bill * percentage);
+        } 
+    }
+}
+
+function highestTipper(arr) {
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++){
+        var sum = sum + arr[i];
+    }
+    return sum / arr.length;
+}
+
+highestTipper(john.paid) > highestTipper(mike.paid) ? console.log("John is the highest tipper!") : console.log("Mike is the highest tipper!");
