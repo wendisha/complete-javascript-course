@@ -40,7 +40,7 @@ console.log(age);       //18
 
 // First scoping example
 
-/*
+
 var a = 'Hello!';
 first();
 
@@ -50,10 +50,10 @@ function first() {
 
     function second() {
         var c = 'Hey!';
-        console.log(a + b + c);
+        console.log(a + b + c);    //Hello!Hi!Hey! is console logged, LEXICAL SCOPING!
     }
 }
-*/
+
 
 
 
