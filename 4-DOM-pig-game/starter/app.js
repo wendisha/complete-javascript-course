@@ -16,7 +16,9 @@ scores = [0,0];
 roundScore = 0;
 activePlayer = 0;
 dice = Math.floor(Math.random() * 6) + 1; 
-// console.log(dice);
 
+//Select the current player's score
 document.querySelector('#current-' + activePlayer).textContent = dice;
 
+//Do not display the dice at the begining 
+document.querySelector('.dice').style.display = 'none';
