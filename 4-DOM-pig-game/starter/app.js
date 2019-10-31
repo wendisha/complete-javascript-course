@@ -17,7 +17,7 @@ roundScore = 0;
 activePlayer = 0;
 
 //Select the current player's score
-document.querySelector('#current-' + activePlayer).textContent = dice;
+// document.querySelector('#current-' + activePlayer).textContent = dice;
 
 //Do not display the dice at the beginning 
 document.querySelector('.dice').style.display = 'none';
@@ -25,5 +25,8 @@ document.querySelector('.dice').style.display = 'none';
 //We use an anonymous function to handle the click. We could've used a callback, definying the funcion and having the event listener call if for us
 document.querySelector('.btn-roll').addEventListener('click', function(){
     var dice = Math.floor(Math.random() * 6) + 1; 
-    document.querySelector('.dice').style.display = 'block';
+    var diceDOM = document.querySelector('.dice')
+    diceDOM.style.display = 'block';
+    //Change image accordingly
+    diceDOM.src = 'dice-' + dice + '.png';
 });
