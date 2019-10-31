@@ -25,4 +25,5 @@ document.querySelector('.dice').style.display = 'none';
 //We use an anonymous function to handle the click. We could've used a callback, definying the funcion and having the event listener call if for us
 document.querySelector('.btn-roll').addEventListener('click', function(){
     var dice = Math.floor(Math.random() * 6) + 1; 
+    document.querySelector('.dice').style.display = 'block';
 });
