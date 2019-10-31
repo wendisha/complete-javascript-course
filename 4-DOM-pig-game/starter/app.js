@@ -10,15 +10,19 @@ GAME RULES:
 */
 
 //Instead of having two separate variables for each player's score, let's create one holding both scores
-var scores, roundScore, activePlayer, dice;
+var scores, roundScore, activePlayer;
 
 scores = [0,0];
 roundScore = 0;
 activePlayer = 0;
-dice = Math.floor(Math.random() * 6) + 1; 
 
 //Select the current player's score
 document.querySelector('#current-' + activePlayer).textContent = dice;
 
-//Do not display the dice at the begining 
+//Do not display the dice at the beginning 
 document.querySelector('.dice').style.display = 'none';
+
+//We use an anonymous function to handle the click. We could've used a callback, definying the funcion and having the event listener call if for us
+document.querySelector('.btn-roll').addEventListener('click', function(){
+    var dice = Math.floor(Math.random() * 6) + 1; 
+});
