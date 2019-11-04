@@ -55,3 +55,10 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
         document.querySelector('.dice').style.display = 'none';
     }
 });
+
+document.querySelector('.btn-hold').addEventListener('click', function(){
+    //Add currentScore to globalScore
+    scores[activePlayer] += roundScore;
+    //Update UI
+    //Check if player won game
+}
